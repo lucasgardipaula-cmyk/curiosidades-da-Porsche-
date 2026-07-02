@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porsche 911 GT3 RS - Flashcard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="flashcard">
+    <!-- Frente -->
+    <div class="side front">
+      <div class="seal">2022+</div>
+      
+      <img src="https://source.unsplash.com/featured/800x600/?porsche-911-gt3-rs" 
+           alt="Porsche 911 GT3 RS" class="car-image">
+      
+      <div class="model-name">
+        <h1>Porsche 911 GT3 RS</h1>
+      </div>
+    </div>
 
+    <!-- Verso -->
+    <div class="side back">
+      <div class="content">
+        <h2>Especificações</h2>
+        
+        <div class="info-grid">
+          <div><strong>Modelo:</strong> Porsche 911 GT3 RS</div>
+          <div><strong>Motor:</strong> 4.0L Flat-Six Naturally Aspirated</div>
+          <div><strong>Potência:</strong> 525 PS (518 HP)</div>
+          <div><strong>Torque:</strong> 465 Nm</div>
+          <div><strong>0–100 km/h:</strong> 3,2 s</div>
+          <div><strong>Velocidade Máx.:</strong> 296 km/h</div>
+          <div><strong>Tração:</strong> Traseira (RWD)</div>
+          <div><strong>Transmissão:</strong> PDK 7 velocidades</div>
+        </div>
+
+        <div class="curiosity">
+          <strong>Curiosidade:</strong> Motor aspirado de alta rotação (9.000 rpm) e aerodinâmica extrema geram mais de 860 kg de downforce — o equivalente a um carro de corrida de fábrica.
+        </div>
+
+        <div class="interior">
+          <img src="https://source.unsplash.com/featured/600x400/?porsche-interior" 
+               alt="Interior Porsche 911 GT3 RS">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Clique para virar o flashcard
+    const flashcard = document.querySelector('.flashcard');
+    flashcard.addEventListener('click', () => {
+      flashcard.classList.toggle('flipped');
+    });
+  </script>
+</body>
+</html>

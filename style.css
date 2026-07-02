@@ -1,1 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.flashcard {
+  width: 1080px;
+  height: 1350px;
+  position: relative;
+  perspective: 2000px;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.flashcard .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.front {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.front .car-image {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.model-name {
+  position: absolute;
+  bottom: 80px;
+  text-align: center;
+  width: 100%;
+}
+
+.model-name h1 {
+  font-size: 4.2rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.seal {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: #c00;
+  color: white;
+  padding: 10px 28px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
+  z-index: 10;
+}
+
+/* Verso */
+.back {
+  background: #0a0a0a;
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #ff0000;
+  text-align: center;
+  border-bottom: 3px solid #ff0000;
+  padding-bottom: 15px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 40px;
+  font-size: 1.35rem;
+  margin-bottom: 40px;
+}
+
+.info-grid div {
+  line-height: 1.5;
+}
+
+.curiosity {
+  background: rgba(255, 0, 0, 0.1);
+  border-left: 6px solid #ff0000;
+  padding: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  border-radius: 0 8px 8px 0;
+}
+
+.interior img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Efeito de flip */
+.flashcard.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .back {
+  transform: rotateY(0deg);
+}
+
+/* Responsivo */
+@media (max-width: 1100px) {
+  .flashcard {
+    width: 90vw;
+    height: calc(90vw * 1.35);
+  }
+}
